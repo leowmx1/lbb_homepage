@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link href="../static/cdn_bootstrap/bootstrap523.min.css" rel="stylesheet">
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<!-- Custom CSS -->
+	<link href="../static/css/modern-style.css" rel="stylesheet">
+	
+	<!-- Scripts -->
+	<script src="../static/cdn_bootstrap/bootstrap523.bundle.min.js"></script>
+	
+	<!-- 百度统计 -->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?faf77f98330ad0aa82d343829175f29c";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<title>播客 - 雷蓓蓓的个人网站</title>
+	<link href="../static/images/头像.ico" type="image/x-icon" rel="icon">
+</head>
+
+<body>
+	<!-- Header Section -->
+	<header class="site-header">
+		<div class="container">
+			<h1>播客 - 走出35岁焦虑</h1>
+			<p>分享职场洞见，帮助你在人生关键节点找到方向</p>
+		</div>
+	</header>
+
+	<!-- Navigation -->
+	<nav class="main-nav">
+		<div class="nav-container">
+			<div class="logo">
+				<a href="/" style="color: white; text-decoration: none; font-weight: 700;">雷蓓蓓</a>
+			</div>
+			<button class="mobile-menu-btn" id="mobile-menu-toggle">
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="nav-links" id="nav-links">
+				<a href="/#about"><i class="fas fa-user-circle"></i> 关于我</a>
+				<a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-book"></i> 课程</a>
+				<a href="/播客" class="active"><i class="fas fa-podcast"></i> 播客</a>
+				<a href="/人类图咨询须知"><i class="fas fa-compass"></i> 人类图咨询</a>
+				{% if not session["username"] %}
+				<a href="/登录"><i class="fas fa-sign-in-alt"></i> 登录</a>
+				{% endif %}
+			</div>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row justify-content-center my-5">
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-body text-center py-5">
+						<div class="mystical-content mb-4">
+							<h2 class="mb-3"><i class="fas fa-podcast me-2"></i> 小宇宙播客</h2>
+							<p class="lead mb-4">已有<span class="badge bg-primary">{{sub}}</span>人订阅</p>
+							
+							<div class="mb-4">
+								<p class="text-muted">在这个播客中，我将分享如何走出35岁职场焦虑，以及职业发展的关键洞察。</p>
+							</div>
+							
+							<div class="qr-container p-3 mb-4 bg-light rounded shadow-sm">
+								<h5 class="text-secondary mb-3">请使用手机扫描下方二维码订阅播客</h5>
+								<img src="../static/images/qr.webp" alt="播客二维码" class="img-fluid rounded shadow" style="max-width: 300px;">
+							</div>
+							
+							<div class="d-flex justify-content-center gap-3">
+								<a href="https://www.xiaoyuzhoufm.com/podcast/62c522cd42e3d7d26948b47e?s=eyJ1IjoiNjJiM2ExNzdlZGNlNjcxMDRhYzFkNWU2In0%3D" target="_blank" class="btn btn-primary-custom">
+									<i class="fas fa-headphones me-2"></i> 前往收听
+								</a>
+								<a href="/" class="btn btn-outline-custom">
+									<i class="fas fa-home me-2"></i> 返回首页
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Featured Episodes -->
+		<section class="mb-5">
+			<h3 class="text-center mb-4"><i class="fas fa-star me-2"></i> 精选集</h3>
+			
+			<div class="row">
+				{% for episode in featured_episodes %}
+				<div class="col-md-4 mb-4">
+					<div class="feature-card h-100">
+						<div class="feature-content">
+							<h4 class="feature-title">{{ episode.title }}</h4>
+							<p>{{ episode.description }}</p>
+							<span class="badge bg-secondary mb-2">{{ episode.category }}</span>
+							<p class="text-muted"><small><i class="far fa-clock me-1"></i> {{ episode.duration }}</small></p>
+							<a href="{{ episode.link }}" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+								<i class="fas fa-headphones me-1"></i> 立即收听
+							</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="footer-content">
+			<div class="footer-column">
+				<h3>联系方式</h3>
+				<ul class="footer-links">
+					<li><i class="fas fa-envelope me-2"></i> Email: leibei1128@163.com</li>
+					<li><i class="fas fa-podcast me-2"></i> 小宇宙播客: @雷蓓蓓</li>
+				</ul>
+			</div>
+			
+			<div class="footer-column">
+				<h3>快速链接</h3>
+				<ul class="footer-links">
+					<li><a href="/#about"><i class="fas fa-angle-right me-2"></i> 关于我</a></li>
+                    <li><a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-angle-right me-2"></i> 课程</a></li>
+                    <li><a href="/播客"><i class="fas fa-angle-right me-2"></i> 播客</a></li>
+                    <li><a href="/人类图咨询须知"><i class="fas fa-angle-right me-2"></i> 人类图咨询</a></li>
+				</ul>
+			</div>
+			
+			<div class="footer-column">
+				<h3>关注我</h3>
+				<div class="qr-code">
+					<img src="../static/images/wechat_qr.webp" alt="微信二维码">
+					<p>扫码关注我的微信公众号</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<p>&copy; 2025 雷蓓蓓. 保留所有权利.</p>
+			<a class="bottom-footer-href" href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">[浙ICP备2022036743号-1]</a>
+		</div>
+	</footer>
+
+	<!-- JavaScript for Mobile Menu Toggle -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+			const navLinks = document.getElementById('nav-links');
+			
+			if(mobileMenuBtn) {
+				mobileMenuBtn.addEventListener('click', function() {
+					navLinks.classList.toggle('active');
+				});
+			}
+		});
+	</script>
+</body>
+
+</html>

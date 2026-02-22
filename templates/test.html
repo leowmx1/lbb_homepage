@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?faf77f98330ad0aa82d343829175f29c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+  <title>测试页面</title>
+  <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+</head>
+
+<body>
+  <script>
+    function validateForm(event) {
+      if (grecaptcha.enterprise.execute().length === 0) {
+        event.preventDefault(); // 阻止表单提交
+        alert("请完成reCAPTCHA验证");
+      }
+
+    }
+  </script>
+  <form action="/test_form" method="POST" onsubmit="validateForm(event)">
+    <div class="g-recaptcha" data-sitekey="6LfbDNEmAAAAAMyizoAnogNKViSjlFpzW1eGOboo" data-action="LOGIN"></div>
+    <br />
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

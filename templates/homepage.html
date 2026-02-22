@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="codeva-4qqQRyBTRP" /><!--bd-->
+  <link href="../static/images/头像.ico" type="image/x-icon" rel="icon">
+  
+  
+  <!-- Bootstrap CSS -->
+  <link href="../static/cdn_bootstrap/bootstrap523.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link href="../static/css/modern-style.css" rel="stylesheet">
+  
+  <!-- Scripts -->
+  <script src="../static/cdn_bootstrap/bootstrap523.bundle.min.js"></script>
+  <script src="https://www.recaptcha.net/recaptcha/enterprise.js" async defer></script>
+
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?faf77f98330ad0aa82d343829175f29c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+  <title>雷蓓蓓 | 项目管理专家 & 心理咨询师</title>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container">
+      <h1>雷蓓蓓的个人空间</h1>
+      <p>项目管理专家 · 心理咨询师 · 人类图解读师</p>
+    </div>
+  </header>
+
+  	<!-- Navigation -->
+	<nav class="main-nav">
+		<div class="nav-container">
+			<div class="logo">
+				<a href="/" style="color: white; text-decoration: none; font-weight: 700;">雷蓓蓓</a>
+			</div>
+			<button class="mobile-menu-btn" id="mobile-menu-toggle">
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="nav-links" id="nav-links">
+				<a href="/#about"><i class="fas fa-user-circle"></i> 关于我</a>
+				<a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-book"></i> 课程</a>
+				<a href="/播客" class="active"><i class="fas fa-podcast"></i> 播客</a>
+				<a href="/人类图咨询须知"><i class="fas fa-compass"></i> 人类图咨询</a>
+				{% if not session["username"] %}
+				<a href="/登录"><i class="fas fa-sign-in-alt"></i> 登录</a>
+				{% endif %}
+			</div>
+		</div>
+	</nav>
+
+  <!-- User Account Area -->
+  {% if session["username"] %}
+  <div class="user-area">
+    <div class="user-dropdown dropdown">
+      {% if session["username"] == "**//root_admin//**" %}
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-crown"></i> 管理员
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary">管理员账户</a></li>
+          <li><a class="dropdown-item text-warning" href="/logout"><i class="fas fa-sign-out-alt"></i> 注销</a></li>
+          <li><a class="dropdown-item text-danger">管理员账户禁止冻结</a></li>
+        </ul>
+      {% else %}
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user"></i> {{session["username"]}}
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="fas fa-comment"></i> 反馈</a></li>
+          <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> 注销</a></li>
+          <li><a class="dropdown-item" href="/del_user?name={{session['username']}}" style="color:red;"><i class="fas fa-user-slash"></i> 冻结账户</a></li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Profile Section -->
+    <section class="profile-section" id="about">
+      <img src="../static/images/头像.webp" class="profile-image" loading="lazy" alt="雷蓓蓓">
+      
+      <!-- About Me Accordion -->
+      <div class="accordion" id="aboutAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-user-circle me-2"></i> 个人简介
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              <p>
+                雷蓓蓓，浙江大学信息学院研究生毕业，曾任网易杭研项目管理部总监。<br><br>
+                项目管理实战书籍《网易一千零一夜》核心作者。<br><br>
+                极客时间《雷蓓蓓的项目管理实战课》专栏作者，近四万付费学员的口碑讲师。<br>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fas fa-briefcase me-2"></i> 个人经历
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              <p>
+                职场十几年，我从一个安安静静在角落里写代码的"小透明"，克服自己的性格障碍。<br><br>
+                一步一个脚印，成长为项目管理软技能的专家、带领30多人项目经理团队的管理者。<br><br>
+                35岁，我离开互联网大厂，成为一名自由职业者。
+                因为，相比无止境的职场竞争，我更享受以"赋能者"来定位自己。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mystical Cards for Services -->
+    <section class="mystical-services">
+      <h2 class="text-center mb-4 mt-4">专业服务</h2>
+      
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="mystical-card mystical-bg-1">
+            <div class="mystical-content">
+              <h3 class="mystical-title">人类图咨询</h3>
+              <p>作为专业的咨询师，我从2015年开始助人成长的事业，目前是ICF国际认证专业教练、人类图认证专业解读师，基于人类图和教练技术的结合，帮助职场人找到适合自己的成长策略。</p>
+              <a href="/人类图咨询须知" class="btn btn-light mt-3">了解详情</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="mystical-card mystical-bg-2">
+            <div class="mystical-content">
+              <h3 class="mystical-title">项目管理课程</h3>
+              <p>基于多年互联网项目管理经验，我开设了《雷蓓蓓的项目管理实战课》，帮助你掌握带领团队成功完成项目的实用技能和方法。</p>
+              <a href="https://time.geekbang.org/column/intro/100038501" target="_blank" class="btn btn-light mt-3">查看课程</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Works -->
+    <section class="feature-works">
+      <h2 class="text-center mb-4">作品展示</h2>
+      
+      <div class="feature-cards">
+        <div class="feature-card">
+          <img src="../static/images/一千零一夜.webp" alt="网易一千零一夜" loading="lazy" class="feature-image">
+          <div class="feature-content">
+            <h4 class="feature-title">网易一千零一夜</h4>
+            <p>互联网项目管理实战书籍，分享了我在网易多年积累的项目管理经验和方法论。</p>
+            <a href="https://item.jd.com/11981649.html" target="_blank" class="btn btn-primary-custom mt-3">购买图书</a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="../static/images/播客.webp" alt="小宇宙播客" loading="lazy" class="feature-image">
+          <div class="feature-content">
+            <h4 class="feature-title">小宇宙播客</h4>
+            <p>在播客中，我分享了如何应对职场焦虑，以及职业发展的关键洞察。</p>
+            <a href="/播客" class="btn btn-outline-custom mt-3">收听播客</a>
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <img src="../static/images/项目管理.webp" alt="项目管理实战课" loading="lazy" class="feature-image">
+          <div class="feature-content">
+            <h4 class="feature-title">项目管理实战课</h4>
+            <p>系统化的项目管理课程，帮助你从入门到精通项目管理的各个方面。</p>
+            <a href="https://time.geekbang.org/column/intro/100038501" class="btn btn-outline-custom mt-3" target="_blank">课程详情</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>联系方式</h3>
+        <ul class="footer-links">
+          <li><i class="fas fa-envelope me-2"></i> Email: leibei1128@163.com</li>
+          <li><i class="fas fa-podcast me-2"></i> 小宇宙播客: @雷蓓蓓</li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="/#about"><i class="fas fa-angle-right me-2"></i> 关于我</a></li>
+                    <li><a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-angle-right me-2"></i> 课程</a></li>
+                    <li><a href="/播客"><i class="fas fa-angle-right me-2"></i> 播客</a></li>
+                    <li><a href="/人类图咨询须知"><i class="fas fa-angle-right me-2"></i> 人类图咨询</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>关注我</h3>
+        <div class="qr-code">
+          <img src="../static/images/wechat_qr.webp" loading="lazy" alt="微信二维码">
+          <p>扫码加我的个人微信号</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 雷蓓蓓. 保留所有权利.</p>
+      <a class="bottom-footer-href" href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">[浙ICP备2022036743号-1]</a>
+
+    </div>
+  </footer>
+
+  <!-- Modal for Feedback -->
+  <div class="modal fade" id="myModal3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">反馈</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/反馈" method="post">
+            <div class="mb-3">
+              <label for="class" class="form-label">类型</label>
+              <select class="form-select" id="class" name="class">
+                <option>网站问题</option>
+                <option>内容建议</option>
+                <option>合作邀请</option>
+                <option>其他</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="specific" class="form-label">具体内容</label>
+              <textarea class="form-control" rows="5" id="specific" name="specific"></textarea>
+            </div>
+            <div class="mb-3">
+              <div class="g-recaptcha mb-3" data-sitekey="6LfbDNEmAAAAAMyizoAnogNKViSjlFpzW1eGOboo" data-action="LOGIN" id="safe">
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary-custom">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      
+      if(mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

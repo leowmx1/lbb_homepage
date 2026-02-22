@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?faf77f98330ad0aa82d343829175f29c";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="../static/cdn_bootstrap/bootstrap523.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="../static/css/modern-style.css" rel="stylesheet">
+    
+    <title>人类图咨询 - 雷蓓蓓的个人网站</title>
+    <link href="../static/images/头像.ico" type="image/x-icon" rel="icon">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+            <h1>人类图咨询</h1>
+            <p>探索你的独特天赋，找到职业发展的最佳路径</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/" style="color: white; text-decoration: none; font-weight: 700;">雷蓓蓓</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="/#about"><i class="fas fa-user-circle"></i> 关于我</a>
+                <a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-book"></i> 课程</a>
+                <a href="/播客"><i class="fas fa-podcast"></i> 播客</a>
+                <a href="/解图" class="active"><i class="fas fa-compass"></i> 人类图咨询</a>
+                {% if not session["username"] %}
+                <a href="/登录"><i class="fas fa-sign-in-alt"></i> 登录</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4">自我认知—教练咨询，对我会有什么帮助？</h2>
+                        
+                        <div class="mb-4">
+                            <h4 class="mystical-title"><i class="fas fa-question-circle me-2"></i>自我认知教练咨询，对我会有哪些帮助？</h4>
+                            <p class="lead">职业倦怠、发展困惑、选择困难、转型障碍、对未来感到迷茫，是人们来找我咨询最多的问题。这些挑战背后的根源，往往在于对自我严重缺乏认知，不知道到底哪条路更适合我？不知道我到底想要的是什么？不知道下一步往哪个方向努力？</p>
+                            
+                            <p>事实上，健康成熟的自我认知，是做出重要人生选择的基础。当你弄不清自己到底是个怎样的人，你就很容易被他人给带跑。但是，因为你并没有遵循自己，所以很快你就会产生抗拒，继而又陷入自我怀疑。如此，在追随他人和自我真相之间挣扎摆荡，不断失去方向和动力。</p>
+                            
+                            <p>解决办法首先就是找到清晰的自我定位，同时通过不断行动，建立起自我认知与行动改变的正向循环。如此，你便能跟随内心真实的声音，向你真正的人生目标承诺，坚定地付诸行动，进而越发地满意现在的自己。</p>
+                            
+                            <p>作为专业的咨询师，我从2015年开始助人成长的事业，目前是ICF国际认证专业教练、人类图认证专业解读师，曾帮助数百位职场人，找到适合自己的成长策略。从客户反馈来看，主要有这几个方面帮助：</p>
+                        </div>
+                        
+                        <!-- Testimonials -->
+                        <div class="mb-5">
+                            <h4 class="feature-title"><i class="fas fa-star me-2"></i>1、精准定位：比我更了解我</h4>
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image.webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (1).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <h4 class="feature-title"><i class="fas fa-bullseye me-2"></i>2、一针见血，清除内在卡点</h4>
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (2).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (3).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <h4 class="feature-title"><i class="fas fa-compass me-2"></i>3、更新视角，明确个人方向</h4>
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (4).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (5).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <h4 class="feature-title"><i class="fas fa-award me-2"></i>4、专业服务，回头客口口相传</h4>
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-4">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (6).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (7).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-card h-100">
+                                        <img src="../static/images/image (8).webp" class="img-fluid rounded" alt="客户反馈">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Section -->
+                        <div class="faq-section mt-5">
+                            <h3 class="text-center mb-4"><i class="fas fa-question-circle me-2"></i>常见问题</h3>
+                            
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            怎么拿到我的人类图？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            出图网站：<a href="https://humandesign.org.cn" target="_blank">https://humandesign.org.cn</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            不需要回答问题，仅凭生日信息就可以测？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            是的，不同于一般的心理测评，人类图又被称为《区分的科学》，生日信息中蕴含着一个人独特的能量图谱，人类图的64个闸门和易经的64卦一一对应，让人感叹东西方的智慧都是相通的。人类图解读出的信息量可以称得上是百科全书，远超其他心理测评，精准度在我研究过的自我认知工具中，排名第一。
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            人类图是不是算命？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            不是，算命看重的是事件的"果"，而人类图则是"因"上的剖析，通过个性化解读一个人的性格特质、天赋异禀以及可能的短板，来帮助你扬长避短，突破自我局限，深度挖掘天赋，成就更好的自己。
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            为什么要预约深度解读？
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            人类图的信息量非常大，可以说是你的一本专属的"人生使用说明书"。一个人是一个复杂的系统，某个通道和闸门的信息，不能简单割裂去理解，而是需要综合全盘去看，才能真正找到解开困惑的关键点。如果你当前正遇到挑战，终日焦灼于矛盾的自我，不知道未来怎么走下去，来找我！一次深度解读，帮助你有针对性的快速解惑，远胜于你自己来回摸索半年一年。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing Section -->
+                        <div class="pricing-section mt-5">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="price-card h-100 shadow-sm border-primary" style="border-radius: 15px; overflow: hidden;">
+                                        <div class="price-header bg-primary text-white p-3">
+                                            <h4 class="mb-0">单次深度解读</h4>
+                                        </div>
+                                        <div class="price-body p-4">
+                                            <div class="price-tag my-3">
+                                                <span class="price">¥599</span>
+                                                <span class="period">/次</span>
+                                            </div>
+                                            <ul class="list-unstyled mt-3">
+                                                <li><i class="fas fa-check text-success me-2"></i>1对1语音连线1小时</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>个性化深度解读</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>针对性问题解答</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="price-card h-100 shadow-sm border-success" style="border-radius: 15px; overflow: hidden;">
+                                        <div class="price-header bg-success text-white p-3">
+                                            <h4 class="mb-0">全年教练陪伴计划</h4>
+                                            <span class="badge bg-warning text-dark mt-2">会员福利价</span>
+                                        </div>
+                                        <div class="price-body p-4">
+                                            <div class="price-tag my-3">
+                                                <span class="price">¥1699</span>
+                                                <span class="period">/年</span>
+                                            </div>
+                                            <p class="text-muted"><del>¥2396</del> 节省697元</p>
+                                            <ul class="list-unstyled mt-3">
+                                                <li><i class="fas fa-check text-success me-2"></i>4次自选议题的1对1深度教练咨询</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>有效期一年</li>
+                                                <li><i class="fas fa-check text-success me-2"></i>会员福利：针对自己图上的问题，非正式的答疑解惑</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Section -->
+                        <div class="contact-section text-center mt-5">
+                            <h3 class="mb-4"><i class="fas fa-envelope me-2"></i>立即预约</h3>
+                            <p>现在加入请扫码加我微信，付款后预约时间</p>
+                            <div class="qr-container mx-auto p-3 mb-4 bg-light rounded shadow-sm" style="max-width: 300px;">
+                                <img src="../static/images/image (9).webp" alt="微信二维码" class="img-fluid rounded">
+                            </div>
+                            <div class="mt-4">
+                                <a href="/" class="btn btn-primary-custom">
+                                    <i class="fas fa-home me-2"></i> 返回首页
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div>
+        <br>
+        <h3 style="color:grey;">评论({{rawnum}})</p>
+            <hr>
+            <form class="was-validated" action="/评论" method="post">
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingInput" placeholder="在这里输入" name="message"
+                        style="height: 200px;" maxlength="100000" required></textarea>
+                    <label for="floatingInput" style="font-size:20px">说点什么~</label>
+                    <div class="invalid-feedback">
+                        限制100000个字符，不能为空
+                    </div>
+                </div>
+                <div class="raw">
+                    {% if session["username"] %}
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" name="no_name"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked" style="font-size:20px">匿名</label>
+                    </div>
+                    {% else %}
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled"
+                            name="no_name" checked disabled>
+                        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">匿名</label>
+                    </div>
+                    {% endif %}
+                    <br>
+                    <button class="btn btn-primary" type="submit">发表</button>
+                </div>
+            </form>
+            <hr>
+            {% for i in messages %}
+                {% if i["用户名"] == "匿名用户" %}
+                    <h5><img src="../static/images/no_name.webp" width="35px" height="35px" style="border-radius:45%"></h5>
+                {% else %}
+                    <h5>{{i["用户名"]}}:</h5>
+                {% endif %}
+                <div style="margin-left:50px">
+                    {% autoescape false %}
+                    {{i["留言"]}}
+                    {% endautoescape %}
+    
+                    {% if i["老师回复"] != "" %}
+                        <div style="background-color:#F1F2F3;border-radius: 15px;">
+                            <br>
+                            <h4 style="margin-left:10px">老师的话:</h4>
+                            <div style="margin-left:60px">
+                                {% autoescape false %}
+                                {{i["老师回复"]}}
+                                {% endautoescape %}
+                            </div>
+                            <br>
+                        </div>
+                    {% endif %}
+                </div>
+            {% if session["username"] == "王铭瑄" %}
+            <!-- 回复 -->
+            <form class="was-validated" action="/回复" method="post" hidden id="{{i['id']}}">
+                <input value="{{i['id']}}" name="id" hidden>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingInput" placeholder="在这里输入" name="rtext"
+                        style="height: 200px;" maxlength="100000"></textarea>
+                    <label for="floatingInput" style="font-size:20px">说点什么~</label>
+                    <div class="invalid-feedback">
+                        限制100000个字符，不能为空
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">发表</button>
+            </form>
+            <!-- 更多按钮 -->
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-outline-secondary">
+                    ...
+                </button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <a class="dropdown-item" onclick="document.getElementById({{i['id']}}).hidden=false">回复</a>
+                    <a href="http://www.leibeibei.cn/删除评论?id={{i['id']}}" class="dropdown-item" style="color: red;">删除</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item">mysql id:{{i['id']}}</a>
+                </ul>
+            </div>
+            {% endif %}
+            {% if session["username"] == "雷蓓蓓" %}
+            <!-- 回复 -->
+            <form class="was-validated" action="/回复" method="post" hidden id="{{i['id']}}">
+                <input value="{{i['id']}}" name="id" hidden>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingInput" placeholder="在这里输入" name="rtext"
+                        style="height: 200px;" maxlength="100000" required></textarea>
+                    <label for="floatingInput" style="font-size:20px">说点什么~</label>
+                    <div class="invalid-feedback">
+                        限制100000个字符，不能为空
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">发表</button>
+            </form>
+            <!-- 更多按钮 -->
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-outline-secondary">
+                    ...
+                </button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <a class="dropdown-item" onclick="document.getElementById({{i['id']}}).hidden=false">回复</a>
+                    <a href="http://www.leibeibei.cn/删除评论?id={{i['id']}}" class="dropdown-item" style="color: red;">删除</a>
+                    <hr class="dropdown-divider">
+                    <!-- <a class="dropdown-item">mysql id:{{i['id']}}</a> -->
+                </ul>
+            </div>
+            {% endif %}
+            {% if session["username"] == "**//root_admin//**" %}
+            <!-- 回复 -->
+            <form class="was-validated" action="/回复" method="post" hidden id="{{i['id']}}">
+                <input value="{{i['id']}}" name="id" hidden>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingInput" placeholder="在这里输入" name="rtext"
+                        style="height: 200px;" maxlength="100000" required></textarea>
+                    <label for="floatingInput" style="font-size:20px">说点什么~</label>
+                    <div class="invalid-feedback">
+                        限制100000个字符，不能为空
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">发表</button>
+            </form>
+            <!-- 更多按钮 -->
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-outline-secondary">
+                    管理评论
+                </button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropend</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                    <a class="dropdown-item" onclick="document.getElementById({{i['id']}}).hidden=false">回复</a>
+                    <a href="http://www.leibeibei.cn/删除评论?id={{i['id']}}" class="dropdown-item" style="color: red;">删除</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item">mysql id:{{i['id']}}</a>
+                </ul>
+            </div>
+            {% endif %}
+            <hr>
+            {% endfor %}
+            </div>
+            <script>
+                // 当初始的 HTML 文档被完全加载和解析完成之后，运行函数
+                document.addEventListener('DOMContentLoaded', function () {
+                    lazyloader();
+                });
+                // 当页面滚动时，运行函数
+                document.addEventListener('scroll', lazyloader, { passive: true });
+    
+                function lazyloader() {
+                    document.querySelectorAll('img.lazy[data-src]').forEach(function (img) {
+                        let rect = img.getBoundingClientRect();
+                        let visible = rect.top <= window.innerHeight && rect.bottom >= 0;
+                        if (!visible) { return; }
+                        // 如果元素可见，则替换其 src 的值
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                    });
+                }
+                // 当浏览器窗口大小改变时，运行函数
+                //window.addEventListener('resize', lazyloader);
+                // 当设备的纵横方向改变时，运行函数
+                //window.addEventListener('orientationChange', lazyloader);
+            </script>
+
+            <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>联系方式</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope me-2"></i> Email: leibei1128@163.com</li>
+                    <li><i class="fas fa-podcast me-2"></i> 小宇宙播客: @雷蓓蓓</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>快速链接</h3>
+                <ul class="footer-links">
+                    <li><a href="/#about"><i class="fas fa-angle-right me-2"></i> 关于我</a></li>
+                    <li><a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-angle-right me-2"></i> 课程</a></li>
+                    <li><a href="/播客"><i class="fas fa-angle-right me-2"></i> 播客</a></li>
+                    <li><a href="/人类图咨询须知"><i class="fas fa-angle-right me-2"></i> 人类图咨询</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>关注我</h3>
+                <div class="qr-code">
+                    <img src="../static/images/wechat_qr.webp" alt="微信二维码">
+                    <p>扫码关注我的微信公众号</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 雷蓓蓓. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/cdn_bootstrap/bootstrap523.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            if(mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+            
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录 - 雷蓓蓓个人网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="../static/cdn_bootstrap/bootstrap523.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="../static/css/modern-style.css" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="../static/cdn_bootstrap/bootstrap523.bundle.min.js"></script>
+    <script src="https://www.recaptcha.net/recaptcha/enterprise.js" async defer></script>
+
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?faf77f98330ad0aa82d343829175f29c";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <style type="text/css">
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a69bd 50%, #6c5ce7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 90%;
+            max-width: 450px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #8e44ad, #6c5ce7);
+        }
+        
+        .login-title {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .form-floating {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            border-radius: 8px;
+            box-shadow: none;
+            border: 1px solid #e1e1e1;
+            padding: 1.1rem 1rem;
+        }
+        
+        .form-control:focus {
+            border-color: #8e44ad;
+            box-shadow: 0 0 0 0.2rem rgba(142, 68, 173, 0.25);
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #8e44ad 0%, #6c5ce7 100%);
+            border: none;
+            border-radius: 30px;
+            padding: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+        
+        .btn-outline-register {
+            border: 2px solid #8e44ad;
+            border-radius: 30px;
+            color: #8e44ad;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-outline-register:hover {
+            background-color: #8e44ad;
+            color: white;
+        }
+        
+        .login-divider {
+            margin: 1.5rem 0;
+            border-top: 1px solid #e1e1e1;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #8e44ad;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #6c5ce7;
+        }
+        
+        @media (max-width: 576px) {
+            .login-container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2 class="login-title">欢迎回来</h2>
+        
+        <form action="/login" method="post" class="was-validated">
+            <div class="form-floating mb-3">
+                <input placeholder="请输入用户名" required name="username" class="form-control" id="username" oninput="admin_login()">
+                <label for="username"><i class="fas fa-user me-2"></i>用户名</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input placeholder="请输入密码" required type="password" name="pwd" class="form-control">
+                <label for="pwd"><i class="fas fa-lock me-2"></i>密码</label>
+            </div>
+            
+            <div class="g-recaptcha mb-3" data-sitekey="6LfbDNEmAAAAAMyizoAnogNKViSjlFpzW1eGOboo" data-action="LOGIN" id="safe">
+            </div>
+            
+            {% if error %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle me-1"></i> {{error}}
+            </div>
+            {% endif %}
+            
+            <button type="submit" class="btn btn-login btn-primary w-100" id="login_btn">登录</button>
+            
+            <hr class="login-divider">
+            
+            <a href="/注册" class="w-100">
+                <button type="button" class="btn btn-outline-register w-100">注册新账户</button>
+            </a>
+        </form>
+        
+        <a href="/" class="back-link"><i class="fas fa-home me-1"></i> 返回首页</a>
+    </div>
+
+    <script>
+        function admin_login() {
+            if (document.getElementById("username").value=="**//root_admin//**") {
+                document.getElementById("login_btn").innerHTML = "<i class='fas fa-crown me-2'></i>管理员账号登录";
+                document.getElementById("login_btn").className = "btn btn-warning w-100";
+                document.getElementById("safe").style="display:none;";
+            } else {
+                document.getElementById("login_btn").innerHTML = "登录";
+                document.getElementById("login_btn").className = "btn btn-login btn-primary w-100";
+                document.getElementById("safe").style="";
+            }
+        }
+    </script>
+</body>
+
+</html>

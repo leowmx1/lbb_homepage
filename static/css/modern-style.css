@@ -1,0 +1,538 @@
+/* Modern Professional Style with Mystical Elements
+   Created for Lei Beibei's Personal Website
+   Supports both desktop and mobile views
+*/
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #8e44ad;
+  --light-accent: #9b59b6;
+  --text-color: #333;
+  --light-text: #f5f5f5;
+  --background: #f8f9fa;
+  --card-bg: #ffffff;
+  --mystical-gradient: linear-gradient(135deg, #2c3e50 0%, #4a69bd 50%, #6c5ce7 100%);
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+.site-header {
+  background: var(--mystical-gradient);
+  color: var(--light-text);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/images/constellation-bg.png');
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.site-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--light-accent);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* User Account Area */
+.user-area {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.user-dropdown .btn {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.user-dropdown .btn:hover {
+  background-color: var(--light-accent);
+  transform: translateY(-2px);
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: none;
+}
+
+.dropdown-item {
+  padding: 0.7rem 1.5rem;
+  transition: var(--transition);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(142, 68, 173, 0.1);
+}
+
+/* Main Content Containers */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 1.5rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Carousel */
+.custom-carousel {
+  margin-bottom: 3rem;
+}
+
+.carousel-item img {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  padding: 1rem;
+  bottom: 2rem;
+}
+
+/* Accordions */
+.accordion {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 1px;
+}
+
+.accordion-button {
+  background-color: var(--card-bg);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.accordion-body {
+  padding: 1.5rem;
+  line-height: 1.8;
+}
+
+/* Buttons */
+.btn-custom {
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary-custom {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--light-accent);
+  transform: translateY(-2px);
+}
+
+.btn-outline-custom {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Profile Section */
+.profile-section {
+  text-align: center;
+  padding: 0;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Feature Cards */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.feature-content {
+  padding: 1.5rem;
+}
+
+.feature-title {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  padding: 3rem 0 2rem;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* QR Code */
+.qr-code {
+  text-align: center;
+}
+
+.qr-code img {
+  max-width: 150px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Mystical Elements */
+.mystical-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mystical-bg-1 {
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+}
+
+.mystical-bg-2 {
+  background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+}
+
+.mystical-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/images/mystical-pattern.png');
+  background-size: cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.mystical-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mystical-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .site-header h1 {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .carousel-item img {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+  }
+  
+  .site-header {
+    padding: 1.5rem 0;
+  }
+  
+  .site-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-item img {
+    max-height: 250px;
+  }
+  
+  .footer-column {
+    flex: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .accordion-button {
+    padding: 1rem;
+  }
+  
+  .accordion-body {
+    padding: 1rem;
+  }
+
+  .bottom-footer-href {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .bottom-footer-href:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.bottom-footer-href {
+    color: rgba(255, 255, 255, 0.5);  /* 灰色半透明 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bottom-footer-href:hover {
+    color: rgba(255, 255, 255, 0.8);  /* 悬停时稍微亮一些 */
+} 

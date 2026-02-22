@@ -1,0 +1,9 @@
+.form-floating>label{
+	left: 1rem;
+}
+.valid-feedback{
+	margin-left: 1rem;
+}
+.invalid-feedback{
+	margin-left: 1rem;
+}
