@@ -89,27 +89,27 @@ def register_page():
 
 @app.route('/register', methods=["get", "post"])
 def register():
-    return redirect("//www.leibeibei.cn")
+    return redirect(url_for('index'))
 
 
 @app.route('/login', methods=["get", "post"])
 def login():
-    return redirect("//www.leibeibei.cn")
+    return redirect(url_for('index'))
 
 
 @app.route('/del_user')
 def del_user():
-    return redirect("//www.leibeibei.cn")
+    return redirect(url_for('index'))
 
 
 @app.route('/logout')
 def logout():
-    return redirect("//www.leibeibei.cn")
+    return redirect(url_for('index'))
 
 
 @app.route('/反馈', methods=["post"])
 def feedback():
-    return redirect("//www.leibeibei.cn")
+    return redirect(url_for('index'))
 
 
 @app.route('/人类图咨询须知')
@@ -119,17 +119,17 @@ def jietu():
 
 @app.route('/评论', methods=["post"])
 def message():
-    return redirect("//www.leibeibei.cn/人类图咨询须知")
+    return redirect(url_for('jietu'))
 
 
 @app.route('/删除评论')
 def dmessage():
-    return redirect("//www.leibeibei.cn/人类图咨询须知")
+    return redirect(url_for('jietu'))
 
 
 @app.route('/回复', methods=["post"])
 def rmessage():
-    return redirect("//www.leibeibei.cn/人类图咨询须知")
+    return redirect(url_for('jietu'))
 
 
 @app.route('/test')
