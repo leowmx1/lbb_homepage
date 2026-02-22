@@ -61,39 +61,11 @@
 				<a href="https://time.geekbang.org/column/intro/100038501" target="_blank"><i class="fas fa-book"></i> 课程</a>
 				<a href="/播客" class="active"><i class="fas fa-podcast"></i> 播客</a>
 				<a href="/人类图咨询须知"><i class="fas fa-compass"></i> 人类图咨询</a>
-				{% if not session["username"] %}
-				<a href="/登录"><i class="fas fa-sign-in-alt"></i> 登录</a>
-				{% endif %}
 			</div>
 		</div>
 	</nav>
 
-  <!-- User Account Area -->
-  {% if session["username"] %}
-  <div class="user-area">
-    <div class="user-dropdown dropdown">
-      {% if session["username"] == "**//root_admin//**" %}
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-crown"></i> 管理员
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item text-primary">管理员账户</a></li>
-          <li><a class="dropdown-item text-warning" href="/logout"><i class="fas fa-sign-out-alt"></i> 注销</a></li>
-          <li><a class="dropdown-item text-danger">管理员账户禁止冻结</a></li>
-        </ul>
-      {% else %}
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fas fa-user"></i> {{session["username"]}}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="fas fa-comment"></i> 反馈</a></li>
-          <li><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> 注销</a></li>
-          <li><a class="dropdown-item" href="/del_user?name={{session['username']}}" style="color:red;"><i class="fas fa-user-slash"></i> 冻结账户</a></li>
-        </ul>
-      {% endif %}
-    </div>
-  </div>
-  {% endif %}
+  <!-- User Account Area removed: 登录/注销等功能已下线 -->
 
   <!-- Main Container -->
   <div class="container">
