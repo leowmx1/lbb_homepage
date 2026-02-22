@@ -1,0 +1,13 @@
+flask
+flask_limiter
+pymysql
+time
+requests
+BeautifulSoup4
+yagmail
+re
+html
+selenium
+webdriver_manager
+ast
+json
